@@ -20,7 +20,7 @@ db = SQLAlchemy(app)
 
 ''' will need to use models."Whatever class in models" for this to work'''
 #import models # fixed circular import
-from models import results
+from models import Result
 
 #################
 #     routes    #
