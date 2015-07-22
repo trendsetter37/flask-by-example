@@ -20,7 +20,7 @@ db = SQLAlchemy(app)
 
 ''' will need to use models."Whatever class in models" for this to work'''
 #import models # fixed circular import
-from models import Result
+import models
 
 #################
 #     routes    #
@@ -61,7 +61,7 @@ def index():
         			reverse=True
         		)
         	try:
-        		result = Result(
+        		result = models.Result(
         			url=url,
         			result_all=raw_word_count,
         			result_no_stop_words=no_stop_words_count
