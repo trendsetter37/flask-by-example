@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from config import *
 from flask.ext.sqlalchemy import SQLAlchemy
-from stop_words import stop
+from stop_words import stops
 from collections import Counter
 from bs4 import BeautifulSoup
 import operator
