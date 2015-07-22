@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from config import *
 from flask.ext.sqlalchemy import SQLAlchemy
-from stop_words import stop 
+from stop_words import stop
 from collections import Counter
 from bs4 import BeautifulSoup
 import operator
@@ -24,7 +24,7 @@ from models import results
 
 #################
 #     routes    #
-################# 
+#################
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -32,7 +32,7 @@ def index():
     results = {}
     if request.method == 'POST':
         # get url that the user has entered
-        try:  
+        try:
             url = request.form['url']
             r = requests.get(url) # shooting out a request to get html eventually
             results['raw_text'] = r.text
@@ -69,7 +69,7 @@ def index():
         		db.session.add(result)
         		db.session.commit()
         	except:
-        		errors.append("Unable to add item todatabase.")
+        		errors.append("Unable to add item to database.")
     return render_template('index.html', errors=errors, results=results)
 
 if __name__ == '__main__':
