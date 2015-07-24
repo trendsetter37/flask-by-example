@@ -15,15 +15,15 @@
 		<div class="col-sm-5 col-offset-1">
 			<h2>Frequencies</h2>
 			<br>
-			<table>
+			<table class="table">
 				<thead>
 					<th>Word</th>
 					<th>Occurrence</th>
 				</thead>
 				<tbody>
-					<tr ng-repeat="(key, val) in results">
+					<tr ng-repeat="key in results">
 						<td>[[ key ]]</td>
-						<td>[[ val ]]</td>
+						<td>[[ results.key ]]</td>
 					</tr>
 				</tbody>
 			</table>

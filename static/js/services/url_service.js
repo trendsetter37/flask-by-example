@@ -15,8 +15,8 @@ app.factory('url_service', ['$http', function($http){
 				.success(function(data){
 					console.log('data received from service: ' + data);
 					for (prop in data){
-						
-						console.log(prop);
+
+						console.log(prop + ': ' + data.prop);
 					}
 					return data;
 				})
@@ -27,4 +27,3 @@ app.factory('url_service', ['$http', function($http){
 		}
 	};
 }]);
-
