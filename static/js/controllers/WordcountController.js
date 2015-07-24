@@ -11,7 +11,7 @@ app.controller('WordcountController', ['$scope', '$log', 'url_service',
 
 		$scope.results = url_service.getUrlResults(userInput);
 		$log.log('results: ' + $scope.results);
-    $lot.log('listing the results:');
+    $log.log('listing the results:');
     for (key in $scope.results) {
       $log.log(key + ': ' + $scope.results[key]);
     }
