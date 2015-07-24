@@ -11,7 +11,7 @@
 app.factory('url_service', ['$http', function($http){
 	return {
 		getUrlResults: function(userInput){
-			$http.post('/start', {'url': userInput})
+			return $http.post('/start', {'url': userInput})
 				.success(function(data){
 					console.log('data received from service: ' + data);
 					for (prop in data){
