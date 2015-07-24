@@ -41,13 +41,13 @@ def get_url_words():
     print "Angular communicated with backend using url service"
     # get url
     # turning request json into pyobject
-    data = json.loads(request.data.decode()) 
+    data = json.loads(request.data.decode())
     print "Data: {}".format(data)
     url = data['url'] # getting url from python data dictionary
     print "Loaded json into data"
     if sanitize(url):
         r = requests.get(url)
-        
+
     else:
         url = 'http://' + url; r = requests.get(url)
 
@@ -56,10 +56,12 @@ def get_url_words():
     errors, results = process_text(r, errors, results)
     # need to fix results so that they are jsonifyable
 
-    print "Results: {}".format(results) 
+    print "Results: {}".format(results)
     json_object = jsonify(dict(results))
+    json_object1 = json.dumps(dict(results))
     print "json_object: {}".format(json_object)
-    return json_object
-    
+    print "json_object1: {}".format(json_object1)
+    return json_object1
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=8000)
