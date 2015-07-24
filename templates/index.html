@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block body %}
-<div class="container">
+<div class="container" ng-controller="WordcountController">
 	<div class="row">
 		<div class="col-sm-5 col-offset-1">
 			<h1>Wordcount 3000</h1>
@@ -14,8 +14,6 @@
 		</div>
 		<div class="col-sm-5 col-offset-1">
 			<h2>Frequencies</h2>
-			[[ results ]]
-			[[ 2+53 ]]
 			<br>
 			<table class="table">
 				<thead>
