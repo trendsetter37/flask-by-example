@@ -1,22 +1,33 @@
 {% extends "base.html" %}
 {% block body %}
 <div class="container">
-	<h1>Wordcount 3000</h1>
-	<!-- method='POST' action='/' -->
-	<form role="form">
-		<div class="form-group">
-			<input type="text" name="url" class="form-control" ng-model="input_url" id="url-box" placeholder="Enter URL..." style="max-width: 300px;">
+	<div class="row">
+		<div class="col-sm-5 col-offset-1">
+			<h1>Wordcount 3000</h1>
+			<!-- method='POST' action='/' -->
+			<form role="form">
+				<div class="form-group">
+					<input type="text" name="url" class="form-control" ng-model="input_url" id="url-box" placeholder="Enter URL..." style="max-width: 300px;">
+				</div>
+				<button type="submit" class="btn bt-default" ng-click="getResults()">Submit</button>
+			</form>
 		</div>
-		<button type="submit" class="btn bt-default" ng-click="getResults()">Submit</button>
-	</form>
-	<br>
-	{% for error in errors %}
-	<h4>{{ error }}</h4>
-	{% endfor %}
-	
-	<h4>Text:</h4><p>[[ results ]]</p>
-			
+		<div class="col-sm-5 col-offset-1">
+			<h2>Frequencies</h2>
+			<br>
+			<table>
+				<thead>
+					<th>Word</th>
+					<th>Occurrence</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="(key val) in results">
+						<td>[[ key ]]</td>
+						<td>[[ val ]]</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>					
 </div>
 {% endblock %}
-		
-		
