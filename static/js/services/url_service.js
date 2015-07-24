@@ -16,7 +16,7 @@ app.factory('url_service', ['$http', function($http){
 					console.log('data received from service: ' + data);
 					for (prop in data){
 
-						console.log(prop + ': ' + data.prop);
+						console.log(prop + ': ' + data[prop]);
 					}
 					return data;
 				})
