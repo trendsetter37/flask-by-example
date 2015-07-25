@@ -53,14 +53,12 @@ def get_url_words():
 
     print "Urls were properly sanitized"
     # Run process
-    errors, results = process_text(r, errors, results)
-    # need to fix results so that they are jsonifyable
 
-    print "Results: {}".format(results)
-    json_object = jsonify(dict(results))
+    # errors incorporate errors at some point
+    errors, results = process_text(r, errors, results)
+    print results
     json_object1 = json.dumps(dict(results))
-    print "json_object: {}".format(json_object)
-    print "json_object1: {}".format(json_object1)
+    print json_object1
     return json_object1
 
 if __name__ == '__main__':
