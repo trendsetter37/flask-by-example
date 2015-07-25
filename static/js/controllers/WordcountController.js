@@ -9,11 +9,13 @@ app.controller('WordcountController', ['$scope', '$log', 'url_service',
 
 		// fire api request
 
-		$scope.results = url_service.getUrlResults(userInput);
-		$log.log('results: ' + $scope.results);
-    $log.log('listing the results:');
-    for (key in $scope.results) {
-      $log.log(key + ': ' + $scope.results[key]);
-    }
+		url_service.getUrlResults(userInput)
+      .success(function(data){
+        $scope.results = data;
+      })
+      .error(function(data){
+        $log.log("There was an error");
+      });
+
 	};
 }]);
