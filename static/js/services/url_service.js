@@ -1,5 +1,5 @@
 
-app.factory('url_service', ['$http', function($http){
+app.factory('url_service', ['$http', '$scope', function($http, $scope){
 	return {
 		getUrlResults: function(userInput){
 			$scope.loading = true;
