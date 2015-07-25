@@ -1,7 +1,6 @@
 app.controller('WordcountController', ['$scope', '$log', 'url_service',
  function($scope, $log, url_service){
-  $scope.submitButtonText = "Submit";
-  $scope.loading = false;
+  
 	$scope.getResults = function(){
 		$log.log('Input url: '+ $scope.input_url);
 		var userInput = $scope.input_url;
