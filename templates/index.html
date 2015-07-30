@@ -21,13 +21,14 @@
 					<th>Occurrence</th>
 				</thead>
 				<tbody>
-					<tr ng-repeat="(key, val) in results">
-						<td>[[ key ]]</td>
-						<td>[[ val ]]</td>
+					<tr ng-repeat="result in results">
+						<td>[[ result.word ]]</td>
+						<td>[[ result.frequency ]]</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
+	<svg></svg>
 </div>
 {% endblock %}

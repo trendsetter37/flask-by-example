@@ -9,6 +9,14 @@ app.controller('WordcountController', ['$scope', '$log', 'url_service',
 		url_service.getUrlResults(userInput)
       .success(function(data){
         $scope.results = data;
+        $scope.chartData = data;
+        initChart($scope.chartData);
+        // test loop through received json 
+        for (var key in data){
+        	if (data.hasOwnProperty(key)) {
+        		console.log(key + ": " + data[key]);
+        	}
+        }
       })
       .error(function(data){
         $log.log("There was an error");

@@ -36,6 +36,8 @@ def index():
 
 @app.route('/start', methods=['POST'])
 def get_url_words():
+    ''' this should be refactored to give an array of
+        word, number objects '''
     errors = []
     results = {}
     print "Angular communicated with backend using url service"
@@ -56,10 +58,14 @@ def get_url_words():
 
     # errors incorporate errors at some point
     errors, results = process_text(r, errors, results)
-    print results
-    json_object1 = json.dumps(dict(results))
-    print json_object1
-    return json_object1
+    #print results
+    results1 = [{'word':item[0], 'frequency': item[1]}for item in results] # This is the correct structure need for d3!
+    #print results1
+    #json_object1 = json.dumps(dict(results))
+    json_object2 = json.dumps(results1)
+    #print "Old json_object1\n{}".format(json_object1)
+    #print "New json_object2\n {}".format(json_object2)
+    return json_object2
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=8000)

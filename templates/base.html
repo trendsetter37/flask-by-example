@@ -6,6 +6,7 @@
 		<title>Wordcount</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
 		<style>
 			.container {
 				max-width: 1000px;
@@ -28,6 +29,12 @@
 
 		<!-- angular controllers -->
 		<script src="{{ url_for('static', filename='js/controllers/WordcountController.js') }}"></script>
+
+		<!-- barchart stuff -->
+		<script src="{{ url_for('static', filename='js/vendors/d3.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/vendors/index.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/bar-chart.js') }}"></script>
+		
 	{% endblock %}
 	</body>
 </html>
