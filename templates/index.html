@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block body %}
 <div class="container">
-	<div class="row">
+	<div class="row" id="first-row">
 		<div class="col-sm-5 col-offset-1">
-			<h1>Wordcount 3000</h1>
+			<h1>Word Frequencies</h1>
 			<!-- method='POST' action='/' -->
 			<form role="form">
 				<div class="form-group">
@@ -21,7 +21,7 @@
 					<th>Occurrence</th>
 				</thead>
 				<tbody>
-					<tr ng-repeat="result in results">
+					<tr ng-repeat="result in chartData">
 						<td>[[ result.word ]]</td>
 						<td>[[ result.frequency ]]</td>
 					</tr>
@@ -29,6 +29,11 @@
 			</table>
 		</div>
 	</div>
-	<svg></svg>
+    <div class="row">
+        <div class="col-sm-10 col-offset-1" id="svg-container">
+            <svg></svg>
+        </div>
+    </div>
+	
 </div>
 {% endblock %}

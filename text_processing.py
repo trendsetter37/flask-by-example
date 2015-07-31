@@ -18,7 +18,7 @@ def process_text(request_object, errors, results):
     raw_word_count = Counter(raw_words)
 
     # stop words
-    no_stop_words = [w for w in raw_words if w.lower() not in stops]
+    no_stop_words = [w for w in raw_words if w.lower() not in stops and len(w) > 1]
     no_stop_words_count = Counter(no_stop_words)
     # save the results to database
     results = sorted(
